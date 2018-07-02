@@ -9,7 +9,7 @@ export default class Time extends React.Component {
             <div>
                 <h4>{this.props.nome}</h4>
                 <h4>{this.props.gols}</h4>                
-                <BotaoGol marcarGol={this.props.marcarGol} />
+                <BotaoGol marcarGol={this.props.marcarGol} time={this.props.nome} />
                 <BotaoAnularGol anularGol={this.props.anularGol} gols={this.props.gols}/>
             </div>
         );

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Time from './Time';
 import Partida from './Partida';
+import BotaoResetar from './BotaoResetar';
 
 export default class PlacarContainer extends React.Component {
 
@@ -42,22 +43,31 @@ export default class PlacarContainer extends React.Component {
         });
     }
 
+    resetarPlacar = () => {
+        this.setState({
+            gols_visitante : 0,
+            gols_casa : 0
+        })
+    }
+
     render() {
-        const styleMainDiv = {display: 'flex', alignItems: 'center', alignContent: 'center', justifyContent: 'center'}
+        const styleMainDiv = {display: 'flex', alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column'}
+        const styleElement = {display: 'flex', alignItems: 'center', alignContent: 'center', justifyContent: 'center'}        
         const { partida, casa, visitante } = this.props;
 
         return (            
             <span>
             <div className="p-3" style={styleMainDiv}>                   
                         <Partida {...partida} />
-            </div>
-            <div className="jumbotron" style={styleMainDiv}>                     
+                        <BotaoResetar resetar={this.resetarPlacar} />
+            </div>            
+            <div className="jumbotron" style={styleElement}>                                 
                     <div className="card w-25 text-center p-3 align-middle">
                         <h2>Time da Casa</h2>
                         <Time nome={casa.nome}
                               gols={ this.state.gols_casa}
                               marcarGol={ this.marcarGolCasa }
-                              anularGol={this.anularGolCasa}
+                              anularGol={this.anularGolCasa}                              
                              />
                     </div>                  
                     <div className="card w-25 text-center p-3 ml-5">
@@ -67,7 +77,7 @@ export default class PlacarContainer extends React.Component {
                               marcarGol={ this.marcarGolVisitante}
                               anularGol={this.anularGolVisitante} />
                     </div>       
-            </div>
+            </div>        
             </span>
         );
     }

@@ -9,12 +9,14 @@ export default class BotaoGol extends React.Component {
 
     handleClick(event) {        
         event.preventDefault();              
-        this.props.marcarGol();
+        this.props.marcarGol();                       
     }
 
     render() {
         return (
-            <button className="btn btn-success btn-lg" onClick={this.handleClick}>Gol ! </button>
+            <span>            
+            <button className="btn btn-success btn-lg" onClick={this.handleClick}>Gol ! </button>            
+            </span>
         );
     }
 

@@ -1,3 +1,7 @@
-# React Series
-Este pacote contém os arquivos básicos para iniciar as vídeo aulas
-de React do [Canal V++](https://youtube.com/user/VPlusPlus).
+## Soccer Scoreboard using React JS
+
+- Install dependencies running ```npm install```.
+- Run the project in dev mode using ```npm run dev```.
+- Access the index page at http://localhost:8080
+
+![](http://g.recordit.co/s57syHmp8W.gif)

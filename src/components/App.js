@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import PlacarContainer from './PlacarContainer';
 
-export default class App extends React.Component {
+export default class App extends Component {
     render() {   
         const dados = {
             partida: {

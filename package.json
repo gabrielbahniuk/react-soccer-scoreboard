@@ -24,6 +24,6 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --history-api-fallback --content-base public"
   },
-  "author": "Vinicius Vinhas",
+  "author": "Gabriel Bahniuk",
   "license": "MIT"
 }

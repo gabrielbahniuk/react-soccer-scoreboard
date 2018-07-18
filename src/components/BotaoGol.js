@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-export default class BotaoGol extends React.Component {
+export default class BotaoGol extends Component {
 
     constructor() {
         super();

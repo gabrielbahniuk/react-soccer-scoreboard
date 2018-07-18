@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import Time from './Time';
 import Partida from './Partida';
 import BotaoResetar from './BotaoResetar';
 
-export default class PlacarContainer extends React.Component {
+export default class PlacarContainer extends Component {
 
     constructor() {
         super();

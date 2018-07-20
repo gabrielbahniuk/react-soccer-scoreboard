@@ -15,7 +15,8 @@
     "prop-types": "^15.6.2",
     "react": "^15.4.2",
     "react-data-fetching": "^0.2.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-modal": "^3.5.1"
   },
   "devDependencies": {
     "webpack": "^2.2.1",

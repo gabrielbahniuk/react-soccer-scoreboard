@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import Time from './Time';
 import Partida from './Partida';
@@ -20,27 +19,23 @@ export default class PlacarContainer extends Component {
     }
 
     anularGolCasa = () => {
-        this.setState({
-            gols_casa : this.state.gols_casa - 1
-        });
+        const { gols_casa } = this.state;
+        this.setState({ gols_casa : gols_casa - 1 });
     }
 
     anularGolVisitante = () => {
-        this.setState({
-            gols_visitante : this.state.gols_visitante - 1
-        });
+        const { gols_visitante } = this.state;
+        this.setState({ gols_visitante : gols_visitante - 1 });
     }
 
     marcarGolCasa = () => {
-        this.setState({
-            gols_casa : this.state.gols_casa + 1
-        });
+        const { gols_casa } = this.state;
+        this.setState({ gols_casa : gols_casa + 1 });
     }
 
-    marcarGolVisitante = () => {
-        this.setState({
-            gols_visitante : this.state.gols_visitante + 1
-        });
+    marcarGolVisitante = () => {        
+        const { gols_visitante } = this.state;
+        this.setState({ gols_visitante : gols_visitante + 1 });
     }
 
     resetarPlacar = () => {
@@ -53,7 +48,7 @@ export default class PlacarContainer extends Component {
     render() {
         const styleMainDiv = {display: 'flex', alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column'}
         const styleElement = {display: 'flex', alignItems: 'center', alignContent: 'center', justifyContent: 'center'}        
-        const { partida, casa, visitante } = this.props;
+        const { partida, time } = this.props;
 
         return (            
             <span>
@@ -64,7 +59,7 @@ export default class PlacarContainer extends Component {
             <div className="jumbotron" style={styleElement}>                                 
                     <div className="card w-25 text-center p-3 align-middle">
                         <h2>Time da Casa</h2>
-                        <Time nome={casa.nome}
+                        <Time nome={time.casa}
                               gols={ this.state.gols_casa}
                               marcarGol={ this.marcarGolCasa }
                               anularGol={this.anularGolCasa}                              
@@ -72,7 +67,7 @@ export default class PlacarContainer extends Component {
                     </div>                  
                     <div className="card w-25 text-center p-3 ml-5">
                         <h2>Visitantes</h2>
-                        <Time nome={visitante.nome}
+                        <Time nome={time.visitante}
                               gols={ this.state.gols_visitante}
                               marcarGol={ this.marcarGolVisitante}
                               anularGol={this.anularGolVisitante} />
@@ -82,21 +77,6 @@ export default class PlacarContainer extends Component {
         );
     }
 }
-
-PlacarContainer.propTypes = {    
-    casa : PropTypes.shape({
-        nome : PropTypes.string.isRequired,
-    }),
-    visitante : PropTypes.shape({
-        nome : PropTypes.string.isRequired,
-    }),
-    partida : PropTypes.shape({
-        estadio : PropTypes.string.isRequired,
-        data : PropTypes.string.isRequired,
-        horario : PropTypes.string.isRequired
-    })
-};
-
 
 
 

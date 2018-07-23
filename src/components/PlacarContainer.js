@@ -24,7 +24,9 @@ export default class PlacarContainer extends Component {
 
   anularGolCasa = () => {
     const { gols_casa } = this.state;
-    this.setState({ gols_casa: gols_casa - 1 });
+    this.setState({
+      gols_casa: gols_casa - 1
+    });
   };
 
   anularGolVisitante = () => {
@@ -65,7 +67,8 @@ export default class PlacarContainer extends Component {
   resetarPlacar = () => {
     this.setState({
       gols_visitante: 0,
-      gols_casa: 0
+      gols_casa: 0,
+      historicoGols: []
     });
   };
 
